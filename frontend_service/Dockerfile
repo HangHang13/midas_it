@@ -1,5 +1,5 @@
 FROM node:16.16.0 as build-stage
-WORKDIR /Frontend
+WORKDIR /frontend_service
 # WORKDIR /usr/src/app
 COPY . .
 RUN npm install
@@ -12,10 +12,10 @@ RUN rm -rf /etc/nginx/conf.d
 
 COPY conf /etc/nginx
 
-COPY --from=build-stage /Frontend/build /usr/share/nginx/html
+COPY --from=build-stage /frontend_service/build /usr/share/nginx/html
 # COPY /etc/letsencrypt/live/j7b307.p.ssafy.io/fullchain.pem /etc/letsencrypt/live/j7b307.p.ssafy.io//fullchain.pem
 # COPY /etc/letsencrypt/live/j7b307.p.ssafy.io/privkey.pem /etc/letsencrypt/live/j7b307.p.ssafy.io//privkey.pem
-# nginx ±âº» Æ÷Æ®ÀÎ 80¹øÀ» »ç¿ë
+# nginx ï¿½âº» ï¿½ï¿½Æ®ï¿½ï¿½ 80ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 EXPOSE 80
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
