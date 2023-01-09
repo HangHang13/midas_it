@@ -5,11 +5,12 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "docker stop midas_react_container"
-                        sh "docker stop midas_spring_container"
+                        //sh "docker stop midas_react_container"
+                        //sh "docker stop midas_spring_container"
                         sleep 1  
-                        sh "docker rm midas_react_container"
-                        sh "docker rm midas_spring_container"
+                        //sh "docker rm midas_react_container"
+                        //sh "docker rm midas_spring_container"
+echo "hi"
                     } catch (error) {
                         echo error
                         sh 'exit 0'
@@ -29,7 +30,7 @@ pipeline {
             steps {
                 sh "docker run -d  -e TZ=Asia/Seoul --name=motoo_react_container -p 4000:4000 -p 8081:80 midas_react"
                 
-                sh "docker run -d -e TZ=Asia/Seoul --name=midas_spring_container -p 8082:8080 midas_spring"
+                sh "docker run -d -e TZ=Asia/Seoul --name=midas_spring_container -p 8080:8080 midas_spring"
 
                 sh "docker image prune --force"
 
