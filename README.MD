@@ -12,14 +12,13 @@
 - mysql  8.0.29
 
 ### External Libraries
-
 - Docker 20.10.16
 - Nginx stable-alpine
 - Jenkins 2.375.1
 
 ## System Arcitecture
 
-![image-20230108225249049](C:\Users\dhkdw\AppData\Roaming\Typora\typora-user-images\image-20230108225249049.png)
+![image-20230108225249049](https://user-images.githubusercontent.com/82326116/211546886-b386f4d2-0cba-4ae0-93f0-803a78433c96.png)
 
 
 
@@ -38,6 +37,11 @@
 포트 설정은 다음과 같습니다.
 
 - 백엔드 서버 8080
+
 - 관리자 페이지 8081
+
 - 서비스 페이지 8082
+
 - 젠킨스 관리 페이지 9090
+
+  
